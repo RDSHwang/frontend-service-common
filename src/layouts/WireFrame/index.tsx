@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Template01 from "../template01/index";
+import React from "react";
+import CssBaseline from "@mui/material/CssBaseline";
 
 const divStyle = {
   container: {
@@ -10,10 +10,10 @@ const divStyle = {
   },
 };
 
-export default function Base_WireFrame() {
+export default function BaseWireFrame(props: any) {
   return (
-    <div style={divStyle.container}>
-      <Template01 />
-    </div>
+    <CssBaseline>
+      <div style={divStyle.container}>{props.children}</div>
+    </CssBaseline>
   );
 }

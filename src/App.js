@@ -15,7 +15,7 @@ const divStyle = {
 
 function App() {
   return (
-    <div style={divStyle.container}>
+    <div>
       <FlowEdit></FlowEdit>
     </div>
   );
