@@ -1,0 +1,30 @@
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  background-color: rgba(160, 91, 185, 0.826);
+  height: 80px;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  flex: 0 0 220px;
+  background-color: hotpink;
+}
+
+.content {
+  flex: 1;
+  background-color: greenyellow;
+}
+
+.footer {
+  background-color: #b6e6db;
+  height: 60px;
+}

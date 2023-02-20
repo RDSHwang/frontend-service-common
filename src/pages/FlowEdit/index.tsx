@@ -5,11 +5,13 @@ import Typography from "@mui/material/Typography";
 import { Box } from "@mui/system";
 import Template01 from "../../layouts/template01";
 import SideBar from "../../components/SideBar";
+import TextField from "@mui/material/TextField";
+import Template02 from "../../layouts/template02";
 
 export default function FlowEdit() {
   return (
     <Template01>
-      <Box sx={{ display: "flex" }}>
+      {/*       <Box sx={{ display: "flex" }}>
         <SideBar />
         <Box
           component="main"
@@ -47,7 +49,7 @@ export default function FlowEdit() {
             ultrices sagittis orci a.
           </Typography>
         </Box>
-      </Box>
+      </Box> */}
     </Template01>
   );
 }

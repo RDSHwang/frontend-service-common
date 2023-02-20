@@ -19,6 +19,7 @@ export default function SideBar(params: any) {
     <div>
       <Drawer
         sx={{
+          color: "blue",
           width: drawerWidth,
           flexShrink: 0,
           "& .MuiDrawer-paper": {
