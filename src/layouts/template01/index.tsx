@@ -6,9 +6,8 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
-import Checkbox from "@mui/material/Checkbox";
-import Avatar from "@mui/material/Avatar";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import SendIcon from "@mui/icons-material/Send";
 
 import "../../styles/Base/Base.css";
 
@@ -58,38 +57,37 @@ export default function Template01(props: any) {
               margin: "10px",
             }}
           >
-            <List dense sx={{ width: "100%", bgcolor: "background.paper" }}>
-              {[0, 1, 2, 3].map((value) => {
-                const labelId = `checkbox-list-secondary-label-${value}`;
-                return (
-                  <ListItem
-                    key={value}
-                    secondaryAction={
-                      <Checkbox
-                        edge="end"
-                        onChange={handleToggle(value)}
-                        checked={checked.indexOf(value) !== -1}
-                        inputProps={{ "aria-labelledby": labelId }}
-                      />
-                    }
-                    disablePadding
-                  >
-                    <ListItemButton>
-                      <ListItemAvatar>
-                        <Avatar
-                          alt={`Avatar n°${value + 1}`}
-                          src={`/static/images/avatar/${value + 1}.jpg`}
-                        />
-                      </ListItemAvatar>
-                      <ListItemText
-                        id={labelId}
-                        primary={`Line item ${value + 1}`}
-                      />
-                    </ListItemButton>
-                  </ListItem>
-                );
-              })}
-            </List>
+    <List sx={{ width: "100%" }}>
+      {[0, 1, 2, 3].map((value) => {
+        const labelId = `checkbox-list-label-${value}`;
+        return (
+          <ListItem key={value}>
+            <Box
+              sx={{
+                backgroundColor: "whitesmoke",
+                borderRadius: "5px",
+                boxShadow: "2px 4px 4px rgba(0, 0, 0, 0.3)",
+                height: "60px",
+                width: "100%",
+                display: "flex",
+                alignItems: "stretch"
+              }}
+            >
+              <ListItemButton role={undefined} onClick={handleToggle(value)}>
+                <ListItemIcon>
+                  <SendIcon />
+                </ListItemIcon>
+                <ListItemText
+                  id={labelId}
+                  primary={`Line item ${value + 1}`}
+                  secondary={`Index ${value}`}
+                />
+              </ListItemButton>
+            </Box>
+          </ListItem>
+        );
+      })}
+    </List>
           </div>
         </div>
       </div>
