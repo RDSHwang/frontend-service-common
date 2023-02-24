@@ -28,7 +28,7 @@ export default function DrawerBase() {
       variant="permanent"
       anchor="left"
     >
-      <Toolbar />
+      <Toolbar sx={{ height: "80px"}}/>
       <Divider />
       <List>
         {WorkList.map((text, index) => (

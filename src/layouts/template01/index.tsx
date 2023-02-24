@@ -12,19 +12,13 @@ import SendIcon from "@mui/icons-material/Send";
 import "../../styles/Base/Base.css";
 
 export default function Template01(props: any) {
-  const [checked, setChecked] = React.useState([1]);
+  const [policyAssignFlag, setPolicyAssignFlag] = React.useState(false);
 
   const handleToggle = (value: number) => () => {
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
-
-    if (currentIndex === -1) {
-      newChecked.push(value);
-    } else {
-      newChecked.splice(currentIndex, 1);
+    if (policyAssignFlag === false) {
+      alert("당사의 보안 정책 동의가 필요합니다.");
+      return;
     }
-
-    setChecked(newChecked);
   };
 
   return (
@@ -56,66 +50,64 @@ export default function Template01(props: any) {
               justifyContent: "stretch",
             }}
           >
-            <Grid container sx={{ display: "flex" }}>
-              <Grid item xs={12} sx={{ width: "30px" }}>
-                <Box sx={{ height: "6vh" }}>
-                  <Paper
-                    elevation={4}
-                    sx={{
-                      bgcolor: "green",
-                      borderRadius: "4",
-                      margin: "10px"
-                    }}
-                  >
-                    
-                  </Paper>
-                </Box>
+            <Grid container>
+              <Grid item xs={12} sx={{ height: "80px", padding: "10px" }}>
+                <Paper
+                  elevation={4}
+                  sx={{
+                    bgcolor: "red",
+                    borderRadius: "4",
+                    height: "100%",
+                  }}
+                >
+                  sdf
+                </Paper>
               </Grid>
-              <Grid item xs={12} sx={{ flexGrow: 1 }}>
-                <Box sx={{ height: "97vh", bgcolor: "yellow" }}>
-                  <List>
-                    {[0, 1, 2, 3].map((value) => {
-                      const labelId = `checkbox-list-label-${value}`;
-                      return (
-                        <ListItem key={value}>
-                          <Paper
-                            elevation={4}
-                            sx={{
-                              backgroundColor: "whitesmoke",
-                              borderRadius: "5px",
-                              height: "60px",
-                              width: "100%",
-                              display: "flex",
-                              alignItems: "stretch",
-                            }}
-                          >
-                            <ListItemButton onClick={handleToggle(value)}>
-                              <Box
-                                sx={{ display: "flex", alignItems: "center" }}
-                              >
-                                <ListItemText
-                                  primary={`${value + 1}`}
-                                  sx={{
-                                    width: "40px",
-                                    textAlign: "center",
-                                  }}
-                                />
-                                <ListItemIcon sx={{ justifyContent: "left" }}>
-                                  <SendIcon />
-                                </ListItemIcon>
-                                <ListItemText
-                                  id={labelId}
-                                  primary={`Line item ${value + 1}`}
-                                  secondary={`Index ${value}`}
-                                />
-                              </Box>
-                            </ListItemButton>
-                          </Paper>
-                        </ListItem>
-                      );
-                    })}
-                  </List>
-                </Box>
+              <Grid item xs={12} sx={{ height: "100%" }}>
+                <List sx={{ bgcolor: "yellow" }}>
+                  {[0, 1, 2, 3].map((value) => {
+                    const labelId = `checkbox-list-label-${value}`;
+
+                    return (
+                      <ListItem
+                        key={value}
+                        sx={{ margin: "0px", bgcolor: "brown" }}
+                      >
+                        <Paper
+                          elevation={4}
+                          sx={{
+                            backgroundColor: "whitesmoke",
+                            borderRadius: "5px",
+                            height: "60px",
+                            width: "100%",
+                            display: "flex",
+                            alignItems: "stretch",
+                          }}
+                        >
+                          <ListItemButton onDoubleClick={handleToggle(value)}>
+                            <Box sx={{ display: "flex", alignItems: "center" }}>
+                              <ListItemText
+                                primary={`${value + 1}`}
+                                sx={{
+                                  width: "40px",
+                                  textAlign: "center",
+                                }}
+                              />
+                              <ListItemIcon sx={{ justifyContent: "left" }}>
+                                <SendIcon />
+                              </ListItemIcon>
+                              <ListItemText
+                                id={labelId}
+                                primary={`Line item ${value + 1}`}
+                                secondary={`Index ${value}`}
+                              />
+                            </Box>
+                          </ListItemButton>
+                        </Paper>
+                      </ListItem>
+                    );
+                  })}
+                </List>
               </Grid>
             </Grid>
           </div>
