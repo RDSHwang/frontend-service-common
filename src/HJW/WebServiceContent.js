@@ -2,7 +2,7 @@ import TreeView from "@mui/lab/TreeView";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import TreeItem from "@mui/lab/TreeItem";
-import { TreeItemStyle } from "./SxProps.tsx";
+import { TreeItemStyle } from "./SxProps.jsx";
 import { Contents1, Contents2 } from "./Contents";
 
 //팝업 내용
