@@ -12,21 +12,23 @@ interface RenderTree {
 
 const data: RenderTree = {
   id: "root",
-  name: "Parent",
+  name: "실시간",
   children: [
     {
-      id: "1",
-      name: "Child - 1",
+      id: "01",
+      name: "출입",
     },
     {
-      id: "3",
-      name: "Child - 3",
-      children: [
-        {
-          id: "4",
-          name: "Child - 4",
-        },
-      ],
+      id: "02",
+      name: "출입문",
+    },
+    {
+      id: "03",
+      name: "파티션(경비)",
+    },
+    {
+      id: "04",
+      name: "경보(알람)",
     },
   ],
 };

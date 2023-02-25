@@ -26,6 +26,7 @@ import {
 } from "../../HJW/SxProps";
 import { ContentChange } from "../../HJW/ContentChange";
 import { useStore } from "../../states/store";
+import SDSideBar from "../../components/SideBar";
 
 export default function Template01() {
   const { isPopupOpen, setIsPopupOpen } = useStore();
@@ -52,7 +53,7 @@ export default function Template01() {
                 height: "100%",
               }}
             >
-              <DrawerBase />
+              <SDSideBar />
             </Box>
           </div>
           <div
@@ -64,7 +65,7 @@ export default function Template01() {
             }}
           >
             <Grid container>
-              <Grid item xs={12} sx={{ height: "80px", padding: "10px" }}>
+              <Grid item xs={12} sx={{ height: "65px", padding: "10px" }}>
                 <Paper
                   elevation={4}
                   sx={{
@@ -78,7 +79,10 @@ export default function Template01() {
               </Grid>
               <Grid item xs={12} sx={{ height: "100%" }}>
                 <List sx={{ bgcolor: "yellow" }}>
-                  {[0, 1, 2, 3].map((value) => {
+                  {[
+                    { index: 1, name: "웹 호출" },
+                    { index: 2, name: "웹 호출2" },
+                  ].map((value) => {
                     const labelId = `checkbox-list-label-${value}`;
 
                     return (
@@ -105,7 +109,7 @@ export default function Template01() {
                         >
                           <Box sx={{ display: "flex", alignItems: "center" }}>
                             <ListItemText
-                              primary={`${value + 1}`}
+                              primary={`${value.index}`}
                               sx={{
                                 width: "40px",
                                 textAlign: "center",
@@ -116,8 +120,8 @@ export default function Template01() {
                             </ListItemIcon>
                             <ListItemText
                               id={labelId}
-                              primary={`Line item ${value + 1}`}
-                              secondary={`Index ${value}`}
+                              primary={`${value.name}`}
+                              secondary={`${value.index}`}
                             />
                           </Box>
                         </Paper>
@@ -161,7 +165,9 @@ export default function Template01() {
               <Button>오류</Button>
               <ButtonGroup color="warning" sx={{ float: "right" }}>
                 <Button variant="contained">저장</Button>
-                <Button variant="outlined">취소</Button>
+                <Button variant="outlined" onClick={handleIsPopupOpen}>
+                  취소
+                </Button>
               </ButtonGroup>
             </Box>
           </Box>
