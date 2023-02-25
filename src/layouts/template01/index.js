@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import BaseWireFrame from "../WireFrame";
 import { Box, Grid, Paper } from "@mui/material";
 import DrawerBase from "../../components/Drawer";
@@ -7,7 +7,6 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import SendIcon from "@mui/icons-material/Send";
-import SDLayoutPopup from "../../HJW/LayoutPopUp";
 
 import "../../styles/Base/Base.css";
 
@@ -26,13 +25,13 @@ import {
   InPopBottomStyle,
 } from "../../HJW/SxProps";
 import { ContentChange } from "../../HJW/ContentChange";
+import { useStore } from "../../states/store";
 
-export default function Template01(props) {
-  const [policyAssignFlag, setPolicyAssignFlag] = React.useState(false);
+export default function Template01() {
+  const { isPopupOpen, setIsPopupOpen } = useStore();
 
-  const handleToggle = () => {
-    console.log("테슽");
-    setPolicyAssignFlag(true);
+  const handleIsPopupOpen = () => {
+    setIsPopupOpen(!isPopupOpen);
   };
 
   return (
@@ -84,7 +83,7 @@ export default function Template01(props) {
 
                     return (
                       <ListItem
-                        onDoubleClick={handleToggle}
+                        onDoubleClick={handleIsPopupOpen}
                         key={value}
                         sx={{
                           bgcolor: "brown",
@@ -131,11 +130,16 @@ export default function Template01(props) {
           </div>
         </div>
       </div>
-      <Modal open={policyAssignFlag}>
+      <Modal open={isPopupOpen}>
         <Box sx={OutPopStyle}>
           <Box sx={InPopTitleStyle}>
             <Typography variant="h6" sx={{ m: 2 }}>
-              <IconButton sx={{ float: "right" }} size="small" edge="end">
+              <IconButton
+                sx={{ float: "right" }}
+                size="small"
+                edge="end"
+                onClick={handleIsPopupOpen}
+              >
                 <CloseIcon />
               </IconButton>
             </Typography>
