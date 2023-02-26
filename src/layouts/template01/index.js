@@ -10,30 +10,33 @@ import SendIcon from "@mui/icons-material/Send";
 
 import "../../styles/Base/Base.css";
 
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import Divider from "@mui/material/Divider";
-import ButtonGroup from "@mui/material/ButtonGroup";
-import CloseIcon from "@mui/icons-material/Close";
-import IconButton from "@mui/material/IconButton";
-import {
-  OutPopStyle,
-  InPopTitleStyle,
-  InPopInfoStyle,
-  InPopContentStyle,
-  InPopBottomStyle,
-} from "../../HJW/SxProps";
-import { ContentChange } from "../../HJW/ContentChange";
 import { useStore } from "../../states/store";
 import SDSideBar from "../../components/SideBar";
+import WebServiceRequest from "../../pages/Popup/WebServiceRequest";
+import Partition from "../../pages/Popup/SightCube/Partition";
+import Normalization from "../../pages/Popup/Normalization";
 
 export default function Template01() {
-  const { isPopupOpen, setIsPopupOpen } = useStore();
+  const { isPopupOpen, setIsPopupOpen, popupMode, setPopupMode } = useStore();
 
-  const handleIsPopupOpen = () => {
+  const handleIsPopupOpen = (code) => {
     setIsPopupOpen(!isPopupOpen);
+    setPopupMode(code);
   };
+
+  function ModalContent() {
+    switch (popupMode) {
+      case 1:
+        return <Partition />;
+      case 2:
+        return <Normalization />;
+      case 3:
+        return <WebServiceRequest />;
+      default:
+        return <WebServiceRequest />;
+    }
+  }
 
   return (
     <BaseWireFrame>
@@ -47,14 +50,7 @@ export default function Template01() {
               justifyContent: "center",
             }}
           >
-            <Box
-              sx={{
-                backgroundColor: "lightblue",
-                height: "100%",
-              }}
-            >
-              <SDSideBar />
-            </Box>
+            <SDSideBar />
           </div>
           <div
             className="content"
@@ -78,19 +74,35 @@ export default function Template01() {
                 </Paper>
               </Grid>
               <Grid item xs={12} sx={{ height: "100%" }}>
-                <List sx={{ bgcolor: "yellow" }}>
+                <List>
                   {[
-                    { index: 1, name: "웹 호출" },
-                    { index: 2, name: "웹 호출2" },
+                    {
+                      code: 1,
+                      index: 1,
+                      name: "SightCube 연결",
+                      remark: "SightCube 서비스 웹 호출합니다.",
+                    },
+                    {
+                      code: 2,
+                      index: 2,
+                      name: "정규화",
+                      remark:
+                        "SightCube 실시간 데이터 구조 정규화 작업을 합니다.",
+                    },
+                    {
+                      code: 3,
+                      index: 3,
+                      name: "웹 서비스 호출",
+                      remark: "고객사 서비스 웹 호출합니다.",
+                    },
                   ].map((value) => {
                     const labelId = `checkbox-list-label-${value}`;
 
                     return (
                       <ListItem
-                        onDoubleClick={handleIsPopupOpen}
+                        onDoubleClick={() => handleIsPopupOpen(value.code)}
                         key={value}
                         sx={{
-                          bgcolor: "brown",
                           "&:hover": {
                             backgroundColor: "#f1f1f1",
                           },
@@ -121,7 +133,7 @@ export default function Template01() {
                             <ListItemText
                               id={labelId}
                               primary={`${value.name}`}
-                              secondary={`${value.index}`}
+                              secondary={`${value.remark}`}
                             />
                           </Box>
                         </Paper>
@@ -135,43 +147,7 @@ export default function Template01() {
         </div>
       </div>
       <Modal open={isPopupOpen}>
-        <Box sx={OutPopStyle}>
-          <Box sx={InPopTitleStyle}>
-            <Typography variant="h6" sx={{ m: 2 }}>
-              <IconButton
-                sx={{ float: "right" }}
-                size="small"
-                edge="end"
-                onClick={handleIsPopupOpen}
-              >
-                <CloseIcon />
-              </IconButton>
-            </Typography>
-          </Box>
-          <Box sx={InPopInfoStyle}>
-            <Typography variant="body2" sx={{ m: 2 }}>
-              웹 서비스를 호출하고 응답 텍스트를 저장합니다.
-            </Typography>
-          </Box>
-          <Box sx={InPopContentStyle}>
-            <Typography sx={{ m: 2, height: "2vh" }}>매개 변수 선택</Typography>
-            <Box sx={{ m: 2 }}>
-              <ContentChange />
-            </Box>
-          </Box>
-          <Box sx={InPopBottomStyle}>
-            <Divider />
-            <Box sx={{ m: 2 }}>
-              <Button>오류</Button>
-              <ButtonGroup color="warning" sx={{ float: "right" }}>
-                <Button variant="contained">저장</Button>
-                <Button variant="outlined" onClick={handleIsPopupOpen}>
-                  취소
-                </Button>
-              </ButtonGroup>
-            </Box>
-          </Box>
-        </Box>
+        <ModalContent />
       </Modal>
     </BaseWireFrame>
   );

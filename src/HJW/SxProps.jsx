@@ -5,7 +5,7 @@ export const OutPopStyle = {
   transform: "translate(-50%, -50%)",
   width: "35vw",
   height: "75vh",
-  bgcolor: "background.paper",
+  bgcolor: "white",
   boxShadow: 10,
   borderRadius: 2,
 };

@@ -17,7 +17,6 @@ import { ContentChange } from "./ContentChange";
 
 //LayoutPopUp
 export default function LayoutPopup() {
-  console.log("팝업");
   return (
     <Modal>
       <Box sx={OutPopStyle}>
