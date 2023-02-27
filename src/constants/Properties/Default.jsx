@@ -2,6 +2,7 @@ export const DefaultFlowModel = [
   {
     flow_id: 1,
     flow_name: "",
+    flow_type: 0,
     flow_list: [
       {
         flow_order: 1,
@@ -12,6 +13,7 @@ export const DefaultFlowModel = [
         properties: {
           ip: "127.0.0.1",
           port: "48030",
+          topic: "/arming",
         },
       },
       {

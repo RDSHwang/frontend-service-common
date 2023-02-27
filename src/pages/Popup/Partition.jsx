@@ -104,6 +104,13 @@ export default function WebServiceRequest() {
             value={flowModel[0].flow_list[0].properties.port}
             onChange={handleInputChangeCCServerPort}
           />
+          <TextField
+            {...TextFieldProps}
+            label="Topic"
+            placeholder="Topic을 입력하세요"
+            value={flowModel[0].flow_list[0].properties.topic}
+            onChange={handleInputChangeCCServerPort}
+          />
         </Box>
       </Box>
       <Box sx={InPopBottomStyle}>
