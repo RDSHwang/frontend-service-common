@@ -28,6 +28,9 @@ export default function WebServiceRequest() {
   return (
     <Box sx={OutPopStyle}>
       <Box sx={InPopTitleStyle}>
+        <Typography sx={{ m: 2 }}>
+          웹 서비스 호출
+        </Typography>
         <Typography variant="h6" sx={{ m: 2 }}>
           <IconButton
             sx={{ float: "right" }}

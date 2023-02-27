@@ -14,15 +14,23 @@ import Modal from "@mui/material/Modal";
 import { useStore } from "../../states/store";
 import SDSideBar from "../../components/SideBar";
 import WebServiceRequest from "../../pages/Popup/WebServiceRequest";
-import Partition from "../../pages/Popup/SightCube/Partition";
+import Partition from "../../pages/Popup/Partition";
 import Normalization from "../../pages/Popup/Normalization";
 
 export default function Template01() {
-  const { isPopupOpen, setIsPopupOpen, popupMode, setPopupMode } = useStore();
+  const {
+    isPopupOpen,
+    setIsPopupOpen,
+    popupMode,
+    setPopupMode,
+    flowModel,
+    setFlowModel,
+  } = useStore();
 
   const handleIsPopupOpen = (code) => {
     setIsPopupOpen(!isPopupOpen);
     setPopupMode(code);
+    console.log(flowModel);
   };
 
   function ModalContent() {

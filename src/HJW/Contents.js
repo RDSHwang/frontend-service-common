@@ -5,7 +5,7 @@ import FormLabel from "@mui/material/FormLabel";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import { methodList, callList } from "./List.tsx";
-import { TextFieldProps } from "./Props.tsx";
+import { TextFieldProps } from "./Props.jsx";
 import { useState } from "react";
 
 //기본

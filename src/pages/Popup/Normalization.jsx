@@ -22,7 +22,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import TreeItem from "@mui/lab/TreeItem";
 import { TreeItemStyle } from "../../HJW/SxProps.jsx";
-import { TextFieldProps } from "../../HJW//Props.tsx";
+import { TextFieldProps } from "../../HJW/Props.jsx";
 
 export default function Normalization() {
   const { isPopupOpen, setIsPopupOpen } = useStore();
@@ -34,6 +34,7 @@ export default function Normalization() {
   return (
     <Box sx={OutPopStyle}>
       <Box sx={InPopTitleStyle}>
+        <Typography sx={{ m: 2 }}>데이터 정규화</Typography>
         <Typography variant="h6" sx={{ m: 2 }}>
           <IconButton
             sx={{ float: "right" }}
