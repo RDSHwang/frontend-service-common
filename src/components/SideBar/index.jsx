@@ -11,7 +11,6 @@ export default function SideBar(params) {
   return (
     <Drawer
       sx={{
-        color: "blue",
         width: drawerWidth,
         flexShrink: 0,
         "& .MuiDrawer-paper": {
@@ -22,7 +21,7 @@ export default function SideBar(params) {
       variant="permanent"
       anchor="left"
     >
-      <Toolbar />
+      <Toolbar sx={{ bgcolor: "orange" }} />
       <Divider />
       <SDTreeView />
     </Drawer>

@@ -16,12 +16,12 @@
 
 .sidebar {
   flex: 0 0 220px;
-  background-color: hotpink;
+  background-color: transparent;
 }
 
 .content {
   flex: 1;
-  background-color: greenyellow;
+  background-color: "transparent";
 }
 
 .footer {
