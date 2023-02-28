@@ -26,8 +26,13 @@ import WebServiceRequest from "../../pages/Popup/WebServiceRequest";
 import Partition from "../../pages/Popup/Partition";
 import Normalization from "../../pages/Popup/Normalization";
 import MenuIcon from "@mui/icons-material/Menu";
+import PlayCircleFilledIcon from "@mui/icons-material/PlayCircleFilled";
+import StopCircleIcon from "@mui/icons-material/StopCircle";
+import { useNavigate } from "react-router-dom";
 
 export default function Template01() {
+  const navigate = useNavigate();
+
   const {
     isPopupOpen,
     setIsPopupOpen,
@@ -92,6 +97,24 @@ export default function Template01() {
                       >
                         <MenuIcon />
                       </IconButton>
+                      <IconButton
+                        size="large"
+                        edge="start"
+                        color="inherit"
+                        aria-label="menu"
+                        sx={{ mr: 2 }}
+                      >
+                        <PlayCircleFilledIcon />
+                      </IconButton>
+                      <IconButton
+                        size="large"
+                        edge="start"
+                        color="inherit"
+                        aria-label="menu"
+                        sx={{ mr: 2 }}
+                      >
+                        <StopCircleIcon />
+                      </IconButton>
                       <Typography
                         variant="h6"
                         component="div"
@@ -99,7 +122,13 @@ export default function Template01() {
                       >
                         News
                       </Typography>
-                      <Button color="inherit">Login</Button>
+                      <Button
+                        variant="outlined"
+                        color="inherit"
+                        onClick={() => navigate("/")}
+                      >
+                        Logout
+                      </Button>
                     </Toolbar>
                   </AppBar>
                 </Box>
