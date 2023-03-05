@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import FlowLogin from "./layouts/authentication/sign-in";
 import routes from "./routes";
-import SideBar from "./components/SideBar"
+import SideBar from "./components/SideBar";
 
 const getRoutes = (allRoutes) =>
   allRoutes.map((route) => {
