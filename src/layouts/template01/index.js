@@ -29,6 +29,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import PlayCircleFilledIcon from "@mui/icons-material/PlayCircleFilled";
 import StopCircleIcon from "@mui/icons-material/StopCircle";
 import { useNavigate } from "react-router-dom";
+import { PostFlow } from "../../apis/Flow";
 
 export default function Template01() {
   const navigate = useNavigate();
@@ -103,6 +104,7 @@ export default function Template01() {
                         color="inherit"
                         aria-label="menu"
                         sx={{ mr: 2 }}
+                        onClick={PostFlow}
                       >
                         <PlayCircleFilledIcon />
                       </IconButton>
@@ -119,9 +121,7 @@ export default function Template01() {
                         variant="h6"
                         component="div"
                         sx={{ flexGrow: 1 }}
-                      >
-                        News
-                      </Typography>
+                      ></Typography>
                       <Button
                         variant="outlined"
                         color="inherit"

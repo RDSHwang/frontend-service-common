@@ -3,9 +3,8 @@ import axios from "axios";
 
 var flowConfig = {
   method: "post",
-  url: "/flow",
+  url: "http://10.250.250.192:50020/rest/v2/",
   headers: {
-    login_token: localStorage.getItem("Token"),
     "Content-Type": "application/json",
   },
   data: FlowData,
