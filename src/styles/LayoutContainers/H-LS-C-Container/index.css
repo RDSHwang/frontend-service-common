@@ -1,6 +1,5 @@
 :root {
   --header-height: 60px;
-  --footer-height: 60px;
 }
 
 .container {
@@ -21,7 +20,7 @@
 .main-content {
   display: flex;
   background-color: orange;
-  height: calc(100vh - var(--header-height) - var(--footer-height));
+  height: calc(100vh - var(--header-height));
 }
 
 .main {
@@ -36,14 +35,6 @@
   background-color: #f1f8e9;
   width: 200px;
   flex-basis: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.footer {
-  background-color: rgb(15, 180, 185);
-  height: var(--footer-height);
   display: flex;
   align-items: center;
   justify-content: center;

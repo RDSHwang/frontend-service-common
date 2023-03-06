@@ -28,7 +28,7 @@ function LoginContent() {
   const colorMode = useContext(ColorModeContext);
 
   function CheckLogin() {
-    navigate("/Flow");
+    navigate("/myflow");
   }
 
   return (
@@ -46,8 +46,7 @@ function LoginContent() {
           onClick={colorMode.toggleColorMode}
         />
       </div>
-      <div classname="LoginSet">
-      </div>
+      <div classname="LoginSet"></div>
       <div className="Login">
         <form style={{ display: "flex", flexDirection: "column" }}>
           <Typography variant="h3">Sign Into Flow</Typography>

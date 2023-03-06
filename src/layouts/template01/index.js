@@ -88,7 +88,7 @@ export default function Template01() {
               <Grid item xs={12} sx={{ height: "65px" }}>
                 <Box sx={{ flexGrow: 1 }}>
                   <AppBar position="static">
-                    <Toolbar>
+                    <Toolbar disableGutters={true}>
                       <IconButton
                         size="large"
                         edge="start"
