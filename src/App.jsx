@@ -4,7 +4,8 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import FlowLogin from "./layouts/authentication/sign-in";
 import routes from "./routes";
-import SideBar from "./components/SideBar";
+import SideBar from "./components/SideBar/SideBar";
+import TestLayoout from "./layouts/TestLayout";
 
 const getRoutes = (allRoutes) =>
   allRoutes.map((route) => {
@@ -21,10 +22,10 @@ const getRoutes = (allRoutes) =>
 function App() {
   return (
     <div>
-      <SideBar />
+      {/* <SideBar /> */}
       <Routes>
         {getRoutes(routes)}
-        <Route path="/" element={<FlowLogin />} />
+        <Route path="/" element={<TestLayoout />} />
       </Routes>
     </div>
   );

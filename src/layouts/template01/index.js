@@ -10,18 +10,17 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import DrawerBase from "../../components/Drawer";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import SendIcon from "@mui/icons-material/Send";
 
-import "../../styles/Base/Base.css";
+import "../../App.css";
 
 import Modal from "@mui/material/Modal";
 import { useStore } from "../../states/store";
-import SDSideBar from "../../components/SideBar";
+import SDSideBar from "../../components/SideBar/SideBar";
 import WebServiceRequest from "../../pages/Popup/WebServiceRequest";
 import Partition from "../../pages/Popup/Partition";
 import Normalization from "../../pages/Popup/Normalization";
