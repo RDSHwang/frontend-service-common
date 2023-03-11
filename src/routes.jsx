@@ -1,7 +1,7 @@
 import React from "react";
 import SignIn from "./layouts/authentication/sign-in/index";
 import NaverLogin from "./layouts/naver";
-import FlowEdit from "./pages/FlowEdit/index";
+import MyFlow from "./layouts/myflow/MyFlow";
 
 const routes = [
   {
@@ -12,7 +12,7 @@ const routes = [
   {
     name: "My Flow",
     route: "/myflow",
-    component: <FlowEdit />,
+    component: <MyFlow />,
   },
   {
     name: "Naver Login",
