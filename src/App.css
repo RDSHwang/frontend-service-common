@@ -37,8 +37,6 @@
   }
 }
 
-
-
 :root {
   --header-height: 60px;
   --footer-height: 60px;
@@ -59,7 +57,13 @@
   justify-content: center;
 }
 
-.main-content {
+.header-main-content {
+  display: flex;
+  background-color: orange;
+  height: calc(100vh - var(--header-height));
+}
+
+.header-main-footer-content {
   display: flex;
   background-color: orange;
   height: calc(100vh - var(--header-height) - var(--footer-height));

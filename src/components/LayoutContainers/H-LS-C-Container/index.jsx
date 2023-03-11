@@ -1,18 +1,17 @@
 import "../../../App.css";
 
 import SDHeader from "../../../components/SDHeader/SDHeader";
-import SDSideBar from "../../SDSideBar/SDSideBar";
-import SDFooter from "../../SDFooter/SDFooter";
+import SDSideBar from "../../../components/SDSideBar/SDSideBar";
+import SDMain from "../../../components/SDMain/SDMain";
 
 const HLSCContainer = () => {
   return (
     <div>
       <SDHeader>Header</SDHeader>
-      <div className="main-content">
+      <div className="header-main-content">
         <SDSideBar>SideBar</SDSideBar>
-        <main className="main">Content</main>
+        <SDMain>Content</SDMain>
       </div>
-      <SDFooter>Footer</SDFooter>
     </div>
   );
 };
