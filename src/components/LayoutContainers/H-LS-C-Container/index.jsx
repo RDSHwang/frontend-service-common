@@ -1,7 +1,7 @@
 import "../../../App.css";
 
 import SDHeader from "../../../components/SDHeader/SDHeader";
-import SDSideBar from "../../../components/SDSideBar/SDSideBar";
+import { SDSideBar } from "../../../components/SDSideBar/SDSideBar";
 import SDMain from "../../../components/SDMain/SDMain";
 
 const HLSCContainer = () => {

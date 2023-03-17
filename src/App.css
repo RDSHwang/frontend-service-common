@@ -42,13 +42,6 @@
   --footer-height: 60px;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
-}
-
 .header {
   background-color: rgb(255, 99, 159);
   height: var(--header-height);
@@ -61,6 +54,12 @@
   display: flex;
   background-color: orange;
   height: calc(100vh - var(--header-height));
+}
+
+.header-main {
+  display: flex;
+  background-color: orange;
+  height: 100vh;
 }
 
 .header-main-footer-content {
@@ -80,7 +79,6 @@
 .nav {
   background-color: #f1f8e9;
   width: 200px;
-  flex-basis: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,6 +87,45 @@
 .footer {
   background-color: rgb(15, 180, 185);
   height: var(--footer-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+}
+
+/* LS-H-C-Container */
+.nav-full {
+  background-color: #f1f8e9;
+  height: 100vh;
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row-container {
+  background-color: yellow;
+  flex: 1;
+  display: flex;
+  width: calc(100vw - 220px);
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header-content {
+  background-color: rgb(255, 99, 159);
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-header {
+  background-color: #e3f2fd;
+  height: calc(100vh - var(--header-height));
   display: flex;
   align-items: center;
   justify-content: center;

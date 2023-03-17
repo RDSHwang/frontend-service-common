@@ -1,5 +1,4 @@
 import React from "react";
-import CssBaseline from "@mui/material/CssBaseline";
 
 const divStyle = {
   container: {
@@ -11,9 +10,5 @@ const divStyle = {
 };
 
 export default function BaseWireFrame(props: any) {
-  return (
-    <CssBaseline>
-      <div style={divStyle.container}>{props.children}</div>
-    </CssBaseline>
-  );
+  return <div style={divStyle.container}>{props.children}</div>;
 }

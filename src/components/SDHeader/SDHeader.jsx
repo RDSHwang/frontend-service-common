@@ -3,7 +3,7 @@ import "../../App.css";
 const SDHeader = ({ children }) => {
   return (
     <>
-      <footer className="header">{children}</footer>
+      <div className="header">{children}</div>
     </>
   );
 };

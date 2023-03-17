@@ -8,4 +8,12 @@ const SDSideBar = ({ children }) => {
   );
 };
 
-export default SDSideBar;
+const SDFullSideBar = ({ children }) => {
+  return (
+    <>
+      <div className="nav-full">{children}</div>
+    </>
+  );
+};
+
+export { SDSideBar, SDFullSideBar };
