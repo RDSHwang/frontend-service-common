@@ -1,5 +1,5 @@
 import React from "react";
-import SignIn from "./layouts/authentication/sign-in/index";
+import SignIn from "./pages/authentication/sign-in/index";
 import NaverLogin from "./layouts/naver";
 import MyFlow from "./layouts/myflow/MyFlow";
 
