@@ -1,9 +1,9 @@
 import { Typography } from "@mui/material";
-import HLSCContainer from "../components/LayoutContainers/H-LS-C-Container";
-import HLSCFContainer from "../components/LayoutContainers/H-LS-C-F-Container";
-import LSHCContainer from "../components/LayoutContainers/LS-H-C-Container";
-import MyFlow from "./myflow/MyFlow";
-import SideBar from "../components/SideBar/SideBar";
+import HLSCContainer from "../../components/LayoutContainers/H-LS-C-Container";
+import HLSCFContainer from "../../components/LayoutContainers/H-LS-C-F-Container";
+import LSHCContainer from "../../components/LayoutContainers/LS-H-C-Container";
+import MyFlow from "../MyFlow/MyFlow";
+import SideBar from "../../components/SideBar/SideBar";
 
 function TestLayout() {
   return (

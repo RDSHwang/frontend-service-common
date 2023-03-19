@@ -1,5 +1,4 @@
 import '../styles/LayoutBasic.css';
-import Box from '@mui/material/Box';
 
 function Content({children}) {
     return (

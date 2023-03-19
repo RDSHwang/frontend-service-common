@@ -1,7 +1,7 @@
 import React from "react";
 import SignIn from "./pages/authentication/sign-in/index";
 import NaverLogin from "./pages/authentication/sign-in/naver";
-import MyFlow from "./layouts/myflow/MyFlow";
+import MyFlow from "./pages/MyFlow/MyFlow";
 
 const routes = [
   {

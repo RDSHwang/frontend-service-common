@@ -5,7 +5,7 @@ import "./App.css";
 import FlowLogin from "./pages/authentication/sign-in";
 import routes from "./routes";
 import SideBar from "./components/SideBar/SideBar";
-import TestLayoout from "./layouts/TestLayout";
+import TestLayoout from "./pages/Test/TestLayout";
 
 const getRoutes = (allRoutes) =>
   allRoutes.map((route) => {

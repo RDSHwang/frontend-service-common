@@ -1,6 +1,6 @@
 import "../../../styles/FlowLogin.css";
 import { useNavigate } from "react-router-dom";
-import { Content, LayoutBasic } from "../../../layouts/LayoutBasic";
+import { Content, LayoutBasic } from "../../LayoutBasic";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
