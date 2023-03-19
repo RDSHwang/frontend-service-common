@@ -36,7 +36,7 @@ const SignIn = () => {
               alignItems: "center",
               justifyContent: "center",
               height: "100%",
-              padding: "90px 50px 90px 100px",
+              padding: "5% 5% 5% 100px",
             }}
           >
             <div
@@ -91,7 +91,7 @@ const SignIn = () => {
                 />
               </FormControl>
               <FormControlLabel
-                sx={{ mb: 1 }}
+                sx={{ mb: 2 }}
                 control={<Checkbox defaultChecked />}
                 label="로그인 상태 유지"
               />
