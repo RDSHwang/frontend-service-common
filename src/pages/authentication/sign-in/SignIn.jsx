@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Button,
   TextField,
@@ -15,6 +16,7 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import SignInContainer from "../../../components/LayoutContainers/SignInContainer/SignInContainer";
 
 const SignIn = () => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
   const handleClickShowPassword = () => {
@@ -45,7 +47,7 @@ const SignIn = () => {
                 borderRadius: "10px",
                 padding: "20px",
                 height: "400px",
-                width: "400px"
+                width: "400px",
               }}
             >
               <FormControl fullWidth sx={{ mb: 2 }}>
@@ -102,6 +104,7 @@ const SignIn = () => {
                   variant="contained"
                   size="large"
                   fullWidth
+                  onClick={() => navigate("/myflow")}
                 >
                   로그인
                 </Button>
