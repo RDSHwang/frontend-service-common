@@ -36,18 +36,19 @@ const SignIn = () => {
               alignItems: "center",
               justifyContent: "center",
               height: "100%",
-              padding: "5% 5% 5% 100px",
+              padding: "5% 5% 5% 15%",
             }}
           >
             <div
               style={{
                 backgroundColor: "#F5F5F5",
-                height: "100%",
                 borderRadius: "10px",
                 padding: "20px",
+                height: "400px",
+                width: "400px"
               }}
             >
-              <FormControl fullWidth sx={{ mb: 4 }}>
+              <FormControl fullWidth sx={{ mb: 2 }}>
                 <Typography variant="h6" align="center" gutterBottom>
                   Smart FLOW
                 </Typography>
