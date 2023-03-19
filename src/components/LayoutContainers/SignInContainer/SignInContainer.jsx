@@ -1,5 +1,17 @@
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
+import { styled } from "@mui/material/styles";
+
 import backgroundImage from "../../../assets/images/Login.png";
+
+const StyledBox = styled(Box)(({ theme }) => ({
+  backgroundImage: `url(${backgroundImage})`,
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  width: "100%",
+  height: "50vh",
+  borderRadius: "10px",
+  boxShadow: theme.shadows[10],
+}));
 
 const SignInContainer = ({ children }) => {
   const containerStyles = {
@@ -11,19 +23,7 @@ const SignInContainer = ({ children }) => {
 
   return (
     <Container maxWidth="lg" sx={containerStyles}>
-      <div
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          width: "100%",
-          height: "50vh",
-          borderRadius: "10px",
-          boxShadow: "0px 0px 20px 0px rgba(0, 0, 0, 0.4)",
-        }}
-      >
-        {children}
-      </div>
+      <StyledBox>{children}</StyledBox>
     </Container>
   );
 };
