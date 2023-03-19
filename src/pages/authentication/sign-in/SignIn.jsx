@@ -8,6 +8,8 @@ import {
   Typography,
   Link,
   Grid,
+  FormControlLabel,
+  Checkbox,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import SignInContainer from "../../../components/LayoutContainers/SignInContainer/SignInContainer";
@@ -23,36 +25,29 @@ const SignIn = () => {
     event.preventDefault();
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // 로그인 처리 로직
-  };
-
   return (
     <SignInContainer>
       <Grid container sx={{ height: "100%", display: "flex" }}>
-        <Grid item xs={12} md={6}></Grid>
-        <Grid item xs={12} md={6} sx={{ height: "100%" }}>
+        <Grid item md={6}></Grid>
+        <Grid item md={6} sx={{ height: "100%" }}>
           <div
             style={{
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               height: "100%",
-              padding: "30px 30px 30px 90px",
+              padding: "90px 50px 90px 100px",
             }}
           >
             <div
               style={{
                 backgroundColor: "#F5F5F5",
-                alignItems: "center",
-                justifyContent: "center",
                 height: "100%",
                 borderRadius: "10px",
                 padding: "20px",
               }}
             >
-              <FormControl fullWidth sx={{ mt: 6, mb: 8 }}>
+              <FormControl fullWidth sx={{ mb: 4 }}>
                 <Typography variant="h6" align="center" gutterBottom>
                   Smart FLOW
                 </Typography>
@@ -73,7 +68,7 @@ const SignIn = () => {
                   style={{ borderRadius: 0 }}
                 />
               </FormControl>
-              <FormControl fullWidth sx={{ mb: 5 }}>
+              <FormControl fullWidth sx={{ mb: 1 }}>
                 <TextField
                   label="비밀번호"
                   id="password"
@@ -82,7 +77,7 @@ const SignIn = () => {
                   required
                   InputProps={{
                     endAdornment: (
-                      <InputAdornment>
+                      <InputAdornment position="end">
                         <IconButton
                           onClick={handleClickShowPassword}
                           onMouseDown={handleMouseDownPassword}
@@ -95,6 +90,11 @@ const SignIn = () => {
                   }}
                 />
               </FormControl>
+              <FormControlLabel
+                sx={{ mb: 1 }}
+                control={<Checkbox defaultChecked />}
+                label="로그인 상태 유지"
+              />
               <FormControl fullWidth sx={{ mb: 2 }}>
                 <Button
                   type="submit"
@@ -108,8 +108,8 @@ const SignIn = () => {
               <Typography align="center">
                 <Link href="#" variant="body2">
                   아이디/비밀번호 찾기
-                </Link>
-                {" | "}
+                </Link>{" "}
+                |{" "}
                 <Link href="#" variant="body2">
                   SUMITS 회원 가입
                 </Link>
