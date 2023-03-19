@@ -1,10 +1,17 @@
+import React from "react";
 import "../../../App.css";
 
-import SDHeader from "../../../components/SDHeader/SDHeader";
-import { SDFullSideBar } from "../../../components/SDSideBar/SDSideBar";
-import SDMain from "../../../components/SDMain/SDMain";
+interface LSHCContainerProps {
+  sidebar: React.ReactNode;
+  header: React.ReactNode;
+  content: React.ReactNode;
+}
 
-const LSHCContainer = ({ sidebar, header, content }) => {
+const LSHCContainer: React.FC<LSHCContainerProps> = ({
+  sidebar,
+  header,
+  content,
+}) => {
   return (
     <div className="container">
       <div className="nav-full">{sidebar}</div>

@@ -14,11 +14,6 @@ const routes = [
     route: "/myflow",
     component: <MyFlow />,
   },
-  {
-    name: "Naver Login",
-    route: "/naver",
-    component: <NaverLogin />,
-  },
 ];
 
 export default routes;
