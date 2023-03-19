@@ -1,8 +1,9 @@
 import "../../../App.css";
+import React from "react";
 
-import SDHeader from "../../../components/SDHeader/SDHeader";
-import { SDSideBar } from "../../../components/SDSideBar/SDSideBar";
-import SDMain from "../../../components/SDMain/SDMain";
+import SDHeader from "../../SDHeader/SDHeader";
+import { SDSideBar } from "../../SDSideBar/SDSideBar";
+import SDMain from "../../SDMain/SDMain";
 
 const HLSCContainer = () => {
   return (

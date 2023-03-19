@@ -1,9 +1,10 @@
 import "../../../App.css";
+import React from "react";
 
-import SDHeader from "../../../components/SDHeader/SDHeader";
-import { SDSideBar } from "../../../components/SDSideBar/SDSideBar";
-import SDMain from "../../../components/SDMain/SDMain";
-import SDFooter from "../../../components/SDFooter/SDFooter";
+import SDHeader from "../../SDHeader/SDHeader";
+import { SDSideBar } from "../../SDSideBar/SDSideBar";
+import SDMain from "../../SDMain/SDMain";
+import SDFooter from "../../SDFooter/SDFooter";
 
 const HLSCContainer = () => {
   return (
